@@ -1,15 +1,14 @@
 name = input("Digite seu nome completo:")
-ano = int(input("Digite ano que nasceu (Ex - aaaa):"))
 executar = True
 while executar == True:
-  if ano >= 1922 and ano <= 2024:
-    try:
+  ano = input("Digite ano que nasceu (Ex - aaaa):")
+  try:
+    ano = int(ano)
+    if ano < 1922 or ano > 2024:
+      print("O ano precisa obedecer o seguinte intervalo: 1922-2024")
+    else:
       idade = 2025 - ano
       executar = False
-      print(name, idade)
-    except:
-      print("Erro, tente outra vez!")
-      break
-  else:
-    print("Erro, tente outra vez!")
-    executar = True
+      print("O usuário", name, "completou ou completará", idade, "anos de idade em 2025")
+  except:
+    print("Os anos precisam ser escritos apenas com números")
